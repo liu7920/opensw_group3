@@ -6,5 +6,6 @@ int main(){
   printf("kwj\n");
   printf("kwj2\n");
   printf("hi\n");
+  printf("hi2\n");
   return 0;
 }

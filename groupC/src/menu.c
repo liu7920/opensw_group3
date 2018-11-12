@@ -20,10 +20,11 @@ void menu(){
 			//회원계정
 			log_check=login(str1,str2);
 			if(log_check==1){
-				printf(">>로그인 완료<<\n");
+				printf(">>관리자 로그인 완료<<\n");
+				admit_menu();
 			}
 			else{
-				printf(">>로그인 실패<<\n");
+				printf(">>관리자 로그인 실패<<\n");
 			}
 
 		}

@@ -1,0 +1,4 @@
+Account(
+	Id varchar(20) MOT NULL,
+	Pw varchar(20) NOT NULL
+);

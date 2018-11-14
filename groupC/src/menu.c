@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "common.h"
+
 void menu(){
 
 	int input;

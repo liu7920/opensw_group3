@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "common.h"
 
 int login(char *str1, char *str2){
 

@@ -2,23 +2,13 @@
 
 int login(char *str1, char *str2){
 
-	char str_id[20];
-	char str_pw[20];
 
-	strcpy(str_id,"admit");
-	strcpy(str_pw,"1234");
+	if(){//관리자 비교
+		return 1;
+	}
+	else if(){//회원 비교
+		return 2;
+	}
 
-	if(strcmp(str1,str_id)==0){
-		if(strcmp(str2,str_pw)==0){
-			return 1;
-		}
-		else{
-			printf(">>비밀번호 입력 실패<<\n");
-			return 0;
-		}
-	}
-	else{
-		printf(">>아이디 입력 실패<<\n");
-		return 0;
-	}
+	return 0;
 }

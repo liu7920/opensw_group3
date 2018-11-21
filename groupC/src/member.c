@@ -10,6 +10,7 @@ void member_menu(){
 		scanf("%d",&i);
 		if(i==1){
 			printf(">>게임 시작<<\n");
+			game();
 		}
 		else if(i==2){
 			printf(">>랭크 보기<<\n");

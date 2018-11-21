@@ -9,7 +9,7 @@ void game(){
 	for(i=0;i<2;i++){
 		for(o=0;o<4;o++){
 			num=0;
-			temp=rand()%8+1;
+			temp=rand()%4+1;
 			for(q=0;q<2;q++){
 				for(w=0;w<4;w++){
 					if(temp==str[q][w]){
@@ -24,13 +24,27 @@ void game(){
 				}
 			}
 			if(num>=2){
-
+				if(o==0){
+					o=3;
+					i=i-1;
+				}
+				else{
+					o=o-1;
+				}
 			}
 			else{
 				str[i][o]=temp;
 			}
 
 		}
+	}
+
+
+	for(i=0;i<2;i++){
+		for(o=0;o<4;o++){
+			printf("%d ",str[i][o]);
+		}
+		printf("\n");
 	}
 
 	return ;

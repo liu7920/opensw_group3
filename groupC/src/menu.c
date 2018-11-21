@@ -17,8 +17,8 @@ void menu(){
 			scanf("%s",str1);
 			printf("비밀번호 입력 : ");
 			scanf("%s",str2);
-			//관리자 계정 id:admit pw:1234
-			//회원계정
+
+			//관리자 및 회원 로그인 
 			log_check=login(str1,str2);
 			if(log_check==1){
 				printf(">>관리자 로그인 완료<<\n");

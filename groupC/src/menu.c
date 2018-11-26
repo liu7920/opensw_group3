@@ -1,4 +1,5 @@
 #include "common.h"
+#include "menu.h"
 
 void menu(){
 
@@ -35,6 +36,7 @@ void menu(){
 		}
 		else if(input==2){
 			printf(">>회원가입<<\n");
+			join();
 		}
 		else if(input==3){
 			printf(">>종료<<\n");

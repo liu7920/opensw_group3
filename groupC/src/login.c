@@ -3,12 +3,13 @@
 
 int login(char *str1, char *str2){
 
-	if(login_check(str1, str2) == 2){
+	int state = login_check(str1, str2);
+	if(state == 2){
 		return 1; // 관리자
 	}
 
-	if(login_check(str1, str2) == 1){
-		return 1; // 일반 회원
+	if(state == 1){
+		return 2; // 일반 회원
 	}
 
 	return 0;

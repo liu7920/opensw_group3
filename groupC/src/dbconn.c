@@ -1,5 +1,5 @@
 #include "common.h"
-#include "dbocnn.h"
+#include "dbconn.h"
 
 void initDB()
 {
@@ -20,7 +20,7 @@ void initDB()
 MYSQL *connectDB()
 {
 	//Address, ID, PW, Port
-	return mysql_real_connect(conn, "localhost", "user", "test", "Game", 3306, NULL, 0);
+	return mysql_real_connect(conn, "localhost", "user", "test", "game", 3306, NULL, 0);
 }
 
 void disconnectDB()
@@ -37,12 +37,17 @@ int login_check(char *id, char *pw)
 
 	char sql[100] = "select * from Account where Id = '";
 
-	strcpy(sql, id);
-	strcpy(sql, "' and Pw = '");
-	strcpy(sql, pw);
-	strcpy(sql, ";");
+	strcat(sql, id);
+	strcat(sql, "' and Pw = '");
+	strcat(sql, pw);
+	strcat(sql, "';");
 
-	if(mysql_query(conn, sql) != 0) return 0; // 로그인 실패
+	printf("%s\n", sql);
+
+	if(mysql_query(conn, sql) != 0){
+		printf(" 여기\n");
+		return 0; // 로그인 실패
+	}
 	else if(chk == 1) return 2; // 관리자 계정 체크
 	else return 1; // 일반 회원 계정 체크
 }
@@ -51,8 +56,8 @@ int str_check(char *str)
 { // ID 중복 체
 	char sql[100] = "select * from Account where Id = '";
 
-	strcpy(sql, str);
-	strcpy(sql, ";");
+	strcat(sql, str);
+	strcat(sql, ";");
 
 	if(mysql_query(conn, sql) != 0) return 1; // 중복 없음
 	else return 0; //중복
@@ -60,11 +65,12 @@ int str_check(char *str)
 
 void insert_Id_Pw(char *Id, char *Pw)
 {
-	char sql[100] = "inesrt into Account values('";
-	strcpy(sql, Id);
-	strcpy(sql, "','");
-	strcpy(sql, Pw);
-	strcpy(sql, "',0);");
+	char sql[100] = "insert into Account values('";
+	strcat(sql, Id);
+	strcat(sql, "','");
+	strcat(sql, Pw);
+	strcat(sql, "',0);");
+	printf("%s\n", sql);
 
 	mysql_query(conn, sql);
 }

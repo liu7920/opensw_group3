@@ -1,4 +1,5 @@
 #include "common.h"
+#include "menu.h"
 
 void member_menu(){
 

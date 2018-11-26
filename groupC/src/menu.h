@@ -6,6 +6,6 @@ int login(char *, char *); // 로그인
 void join(); // 회원가입
 void member_menu();
 void admit_menu();
-void gmae();
+void game();
 
 #endif /* MENU_H_ */

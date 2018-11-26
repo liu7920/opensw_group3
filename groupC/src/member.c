@@ -21,7 +21,7 @@ void member_menu(){
 			sec=d->tm_sec;			
 			printf("시작 시간 : %d시 %d분 %d초\n",hour,min,sec);
 			
-			//game();
+			game();
 			sleep(75);
 
         		now=time(NULL);

@@ -3,6 +3,7 @@
 
 void menu();
 int login(char *, char *);
+void join();
 void member_menu();
 void admit_menu();
 void gmae();

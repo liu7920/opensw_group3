@@ -31,8 +31,6 @@ void disconnectDB()
 
 int login_check(char *id, char *pw)
 {
-	MYSQL_ROW row;
-	MYSQL_RES *res_set;
 	int chk = 0;
 
 	if(strcmp(id, "admin") == 0) chk = 1;
@@ -47,4 +45,26 @@ int login_check(char *id, char *pw)
 	if(mysql_query(conn, sql) != 0) return 0; // 로그인 실패
 	else if(chk == 1) return 2; // 관리자 계정 체크
 	else return 1; // 일반 회원 계정 체크
+}
+
+int str_check(char *str)
+{ // ID 중복 체
+	char sql[100] = "select * from Account where Id = '";
+
+	strcpy(sql, str);
+	strcpy(sql, ";");
+
+	if(mysql_query(conn, sql) != 0) return 1; // 중복 없음
+	else return 0; //중복
+}
+
+void insert_Id_Pw(char *Id, char *Pw)
+{
+	char sql[100] = "inesrt into Account values('";
+	strcpy(sql, Id);
+	strcpy(sql, "','");
+	strcpy(sql, Pw);
+	strcpy(sql, "',0);");
+
+	mysql_query(conn, sql);
 }

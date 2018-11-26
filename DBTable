@@ -1,4 +1,5 @@
 Account(
 	Id varchar(20) MOT NULL,
-	Pw varchar(20) NOT NULL
+	Pw varchar(20) NOT NULL,
+	Cl_time varchar(20) NOT NULL
 );

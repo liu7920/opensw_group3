@@ -26,10 +26,12 @@ void menu(){
 			if(log_check==1){
 				printf(">>관리자 로그인 완료<<\n");
 				admit_menu();
+				sleep(2);
 			}
 			else if(log_check==2){
 				printf(">>회원 로그인 완료<<\n");
 				member_menu();
+				sleep(2);
 			}
 			else{
 				printf(">>로그인 실패<<\n");

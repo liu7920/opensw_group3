@@ -20,6 +20,7 @@ void admit_menu(){
 				scanf("%d",&i);
 				if(i==1){
 					printf("공지사항 추가 할 내용 입력 : ");
+					strcpy(_str," ");
 					scanf("%s",_str);
 					insert_Notice(_str);
 				}
@@ -41,11 +42,22 @@ void admit_menu(){
 		}
 		else if(i==2){
 			printf(">>회원 데이터 초기화<<\n");
+			printf("랭킹 초기화 할 아이디 입력 : ");
+			strcpy(str," ");
+			scanf("%s",str);
+			
+			if(/*str == id(db)*/){
+				//랭킹 초기화 
+			}
+			else{
+				
+			}
 			//랭킹 초기화
 		}
 		else if(i==3){
 			printf(">>관리자 비밀번호 변경<<\n");
 			printf("비밀번호 입력 : ");
+			strcpy(str," ");
 			scanf("%s",str);
 			admin_modifiy(str);
 		}

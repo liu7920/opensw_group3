@@ -39,11 +39,14 @@ void admit_menu(){
 			}
 		}
 		else if(i==2){
-			printf(">>회원 데이터 초기화<<\n");
+			printf(">>회원 랭킹 데이터 초기화<<\n");
 			printf("랭킹 초기화 할 아이디 입력 : ");
 			strcpy(str," ");
 			scanf("%s",str);
 			
+			if(str_check(str)){
+
+			}
 			//if(/*str == id(db)*/){
 				//랭킹 초기화 
 			//}

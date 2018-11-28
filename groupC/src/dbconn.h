@@ -25,6 +25,8 @@ void delete_Notice(char *);
 void modifiy_admin(char *);
 void modifiy_user(char *);
 void leave_user(char *);
+void user_ClTime_Insert(char *);
+void user_ClTime_clear(char *);
 
 MYSQL *conn;
 

@@ -41,8 +41,10 @@ void member_menu(){
 			printf("완료 시간 : %d시 %d분 %d초\n",hour1,min1,sec1);
 			printf("%d_%d_%d_%d_%d_%d\n",hour1*3600,min1*60,sec1,hour*3600,min*60,sec);
 			printf("경과 시간 : %d초\n",((hour1*3600)+(min1*60)+sec1) - ((hour*3600)+(min*60)+sec));
-			temp=((hour1*3600)+(min1*60)+sec1) - ((hour*3600)+(min*60)+sec));
+			temp=((hour1*3600)+(min1*60)+sec1) - ((hour*3600)+(min*60)+sec);
 			sprintf(s1,"%d",temp); // int형에서 char문자열 변환
+			user_ClTime_Insert(s1);
+
 		}
 		else if(i==2){
 			printf(">>랭크 보기<<\n");

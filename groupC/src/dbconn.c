@@ -245,3 +245,25 @@ void print_Notice_admin()
 		}
 	}
 }
+
+void user_ClTime_clear(char *str)
+{
+	char sql[100] = "Update Account set Cl_time = '0' where Id = '";
+
+	strcat(sql, str);
+	strcat(sql, "';");
+
+	mysql_query(conn, sql); // 유저 클리어타임 시간 초기화
+}
+
+void user_ClTime_Insert(char *str)
+{
+	char sql[100] = "Update Account set Cl_time = '";
+
+	strcat(sql, str);
+	strcat(sql, "' where Id = '");
+	strcat(sql, login_id);
+	strcat(sql, "';");
+
+	mysql_query(conn, sql);
+}

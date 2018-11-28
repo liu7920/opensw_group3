@@ -50,7 +50,7 @@ void admit_menu(){
 				//랭킹 초기화 
 			}
 			else{
-				
+				printf("아이디 입력 실패 \n");
 			}
 			//랭킹 초기화
 		}

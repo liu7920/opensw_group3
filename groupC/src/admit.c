@@ -9,6 +9,7 @@ void admit_menu(){
 	while(1){
 		sleep(2);
 		system("clear");
+		printf("관리자 메뉴\n");
 		printf("1.공지사항 수정 2.회원 데이터 초기화 3.관리자 비밀번호 변경 4.로그아웃\n");
 		printf("입력 : ");
 		scanf("%d",&i);
@@ -34,6 +35,8 @@ void admit_menu(){
 				}
 				else if(i==3){
 					printf("취소\n");
+					sleep(2);
+					system("clear");
 					break;
 				}
 				else{

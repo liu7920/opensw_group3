@@ -23,7 +23,7 @@ void admit_menu(){
 				if(i==1){
 					printf("공지사항 추가 할 내용 입력 : ");
 					strcpy(_str," ");
-					gets("%s",_str);
+					gets(_str);
 					insert_Notice(_str);
 				}
 				else if(i==2){

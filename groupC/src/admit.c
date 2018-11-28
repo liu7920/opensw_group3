@@ -23,7 +23,8 @@ void admit_menu(){
 				if(i==1){
 					printf("공지사항 추가 할 내용 입력 : ");
 					strcpy(_str," ");
-					gets(_str);
+					fflush(stdin);
+					scanf("%s", _str);
 					insert_Notice(_str);
 				}
 				else if(i==2){
@@ -57,13 +58,6 @@ void admit_menu(){
 			else{
 				printf("일치하는 ID가 없습니다.\n");
 			}
-			//if(/*str == id(db)*/){
-				//랭킹 초기화 
-			//}
-			/*else{
-				printf("아이디 입력 실패 \n");
-			}*/
-			//랭킹 초기화
 		}
 		else if(i==3){
 			system("clear");

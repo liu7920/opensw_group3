@@ -59,7 +59,7 @@ int login_check(char *id, char *pw)
 }
 
 int str_check(char *str)
-{ // ID 중복 체
+{ // ID 중복 체크
 	char sql[100] = "select Id from Account where Id = '";
 	MYSQL_ROW row;
 	MYSQL_RES *res_set;
@@ -207,6 +207,41 @@ void leave_user(char *str)
 			else{
 				printf("잘못된 입력\n");
 			}
+		}
+	}
+}
+
+void print_Notice()
+{
+	char sql[100] = "select Text from Notice;";
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
+
+	if(mysql_query(conn, sql) != 0) return; // SQL Error
+	else{
+		res_set=mysql_store_result(conn);
+		row=mysql_fetch_row(res_set);
+		while(row != NULL){
+			printf("%s\n", row[0]);
+			row=mysql_fetch_row(res_set);
+		}
+	}
+}
+
+void print_Notice_admin()
+{
+	char sql[100] = "select * from Notice;";
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
+
+	if(mysql_query(conn, sql) != 0) return; // SQL Error
+	else{
+		res_set=mysql_store_result(conn);
+		row=mysql_fetch_row(res_set);
+		while(row != NULL){
+			printf("%s. ", row[0]);
+			printf("%s\n", row[1]);
+			row=mysql_fetch_row(res_set);
 		}
 	}
 }

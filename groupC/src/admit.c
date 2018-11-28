@@ -13,9 +13,7 @@ void admit_menu(){
 		if(i==1){
 			while(1){
 				printf(">>공지사항 수정<<\n");
-				// 보여주기 예시
-				// 1 ~~~~~~~~~~~
-				// 2 ***********
+				print_Notice_admin();
 				printf("1.추가 2.삭제 3.취소\n");
 				scanf("%d",&i);
 				if(i==1){

@@ -9,6 +9,7 @@ int login(char *str1, char *str2){
 		return 1; // 관리자
 	}
 	else if(state == 1){
+		strcpy(login_id, str1);
 		return 2; // 일반 회원
 	}
 	return 0;

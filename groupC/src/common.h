@@ -7,4 +7,6 @@
 #include <unistd.h>
 #include <string.h>
 
+char login_id[100] = "";
+
 #endif

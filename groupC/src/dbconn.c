@@ -129,9 +129,7 @@ void modifiy_admin(char *str)
 				scanf("%s", temp);
 
 				strcat(sql2, temp);
-				strcat(sql2, "' where Pw = '");
-				strcat(sql2, str);
-				strcat(sql2, "';");
+				strcat(sql2, "' where Id = 'admin';");
 
 				mysql_query(conn,sql);
 				printf("Admin 비밀번호 변경 완료\n");
@@ -139,5 +137,39 @@ void modifiy_admin(char *str)
 			else printf("기존 비밀번호 불일치\n");
 		}
 	}
+}
 
+void modifiy_user(char *str)
+{
+	char sql[100] = "select Pw from Account where Id = '";
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
+
+	strcat(sql, login_id);
+	strcat(sql, "';");
+
+	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	else{
+		res_set=mysql_store_result(conn);
+		row=mysql_fetch_row(res_set);
+		if(row == NULL) return 1;
+		else{
+			if(strcmp(row[0], str) == 0){
+				char temp[100]="";
+				char sql2[100] = "update Account set Pw = '";
+
+				printf("새로운 비밀번호 입력 : ");
+				scanf("%s", temp);
+
+				strcat(sql2, temp);
+				strcat(sql2, "' where Id = '");
+				strcat(sql2, login_id);
+				strcat(sql2, "';");
+
+				mysql_query(conn,sql);
+				printf("%s 회워님 비밀번호 변경 완료\n", login_id);
+			}
+			else printf("기존 비밀번호 불일치\n");
+		}
+	}
 }

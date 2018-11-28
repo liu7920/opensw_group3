@@ -14,6 +14,7 @@ void insert_Id_Pw(char *, char *);
 void insert_Notice(char *);
 void delete_Notice(char *);
 void modifiy_admin(char *);
+void modifiy_user(char *);
 
 MYSQL *conn;
 

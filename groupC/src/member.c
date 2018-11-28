@@ -45,20 +45,12 @@ void member_menu(){
 			printf(">>회원 정보 수정<<\n");
 			printf("비밀번호  입력  : ");
 			scanf("%s",str);
-			if(/*비밀번호가 맞다면 */){
-				printf("새로운 비밀번호 입력 : ");
-				scanf("%s",str);
-				//str을 새로운 비밀번호로 db에 넣기
-				printf("비밀번호 변경 완료\n");
-			}
-			else{ //틀리다면
-				printf("입력 비밀번호가 틀립니다.\n");
-			}
+			modifiy_user(str);
 
 		}
 		else if(i==4){
 			printf(">>회원 탈퇴<<\n");
-			printf("회원 아이디 입력 : ");
+			printf("비밀번호 입력 : ");
 			scanf("%s",str);
 			if(/*str == id(db)*/){
 				printf("1.탈퇴 2.취소");

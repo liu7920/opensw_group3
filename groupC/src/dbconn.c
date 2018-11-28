@@ -274,7 +274,7 @@ void print_Rank()
 	char _rank[10][50];
 	char _temp[50];
 	char _temp1[100];
-	int temp,cu=0, q, w;
+	int temp,cu=0, q, w, j=0;
 	char sql[100] = "select Id, Cl_time from Account;";
 	MYSQL_ROW row;
 	MYSQL_RES *res_set;
@@ -290,14 +290,15 @@ void print_Rank()
 			if(row == NULL){
 				break;
 			}
-			else if(strcmp(row[0], "admin") != 0){
+			else if((strcmp(row[0], "admin") != 0) && (strcmp(row[1], "0") != 0)){
 				char __temp[100] = "";
 				strcpy(__temp, row[0]);
 				strcat(__temp, " ");
 				strcat(__temp, row[1]);
-				strcpy(rank[q], __temp);
-				strcpy(_rank[q], row[1]); /* db의 시간만 넣기*/
+				strcpy(rank[j], __temp);
+				strcpy(_rank[j], row[1]); /* db의 시간만 넣기*/
 				cu++;
+				j++;
 			}
 		}
 
@@ -323,7 +324,7 @@ void print_Rank()
 		}
 		printf("***** 랭킹 *****\n");
 		for(int i=0;i<cu;i++){
-			printf("%s\n",rank[i]);
+			printf("%d등 %15s\n",i+1, rank[i]);
 		}
 	}
 }

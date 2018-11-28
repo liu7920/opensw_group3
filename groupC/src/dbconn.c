@@ -305,12 +305,18 @@ void print_Rank()
 			for(w=1;w<cu;w++){
 				if(strcmp(_rank[q],_rank[w]) > 0 ){
 					//시간만 정렬
+					strcpy(_temp," ");
 					strcpy(_temp,_rank[q]);
+					strcpy(_rank[q]," ");
 					strcpy(_rank[q],_rank[w]);
+					strcpy(_rank[w]," ");
 					strcpy(_rank[w],_temp);
 					//아이디 + 시간 들어가있는것 정렬
+					strcpy(_temp1," ");
 					strcpy(_temp1,rank[q]);
+					strcpy(rank[q]," ");
 					strcpy(rank[q],rank[w]);
+					strcpy(rank[w]," ");
 					strcpy(rank[w],_temp1);
 				}
 			}

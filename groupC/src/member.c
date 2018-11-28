@@ -49,7 +49,7 @@ void member_menu(){
 		else if(i==2){
 			system("clear");
 			print_Rank();
-			
+			sleep(5);
 		}
 		else if(i==3){
 			system("clear");

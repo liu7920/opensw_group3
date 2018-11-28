@@ -32,10 +32,12 @@ void disconnectDB()
 int login_check(char *id, char *pw)
 {
 	int chk = 0;
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
 
 	if(strcmp(id, "admin") == 0) chk = 1;
 
-	char sql[100] = "select * from Account where Id = '";
+	char sql[100] = "select Pw from Account where Id = '";
 
 	strcat(sql, id);
 	strcat(sql, "' and Pw = '");
@@ -44,23 +46,34 @@ int login_check(char *id, char *pw)
 
 	printf("%s\n", sql);
 
-	if(mysql_query(conn, sql) != 0){
-		printf(" 여기\n");
-		return 0; // 로그인 실패
+	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	else{
+		res_set = mysql_store_result(conn);
+		row = mysql_fetch_row(res_set);
+		if(row == NULL) return 3; // 로그인 실패
+		else if(strcmp(pw, row[0]) == 0){
+			if(chk == 1) return 2; // 관리자
+			else return 1; // 일반 회원
+		}
 	}
-	else if(chk == 1) return 2; // 관리자 계정 체크
-	else return 1; // 일반 회원 계정 체크
 }
 
 int str_check(char *str)
 { // ID 중복 체
-	char sql[100] = "select * from Account where Id = '";
+	char sql[100] = "select Id from Account where Id = '";
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
 
 	strcat(sql, str);
-	strcat(sql, ";");
+	strcat(sql, "';");
 
-	if(mysql_query(conn, sql) != 0) return 1; // 중복 없음
-	else return 0; //중복
+	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	else{
+		res_set=mysql_store_result(conn);
+		row=mysql_fetch_row(res_set);
+		if(row == NULL) return 1;
+		else return 0; // 중복 없
+	}
 }
 
 void insert_Id_Pw(char *Id, char *Pw)
@@ -69,7 +82,7 @@ void insert_Id_Pw(char *Id, char *Pw)
 	strcat(sql, Id);
 	strcat(sql, "','");
 	strcat(sql, Pw);
-	strcat(sql, "',0);");
+	strcat(sql, "','0');");
 	printf("%s\n", sql);
 
 	mysql_query(conn, sql);

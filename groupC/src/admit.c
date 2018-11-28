@@ -21,11 +21,13 @@ void admit_menu(){
 				if(i==1){
 					printf("공지사항 추가 할 내용 입력 : ");
 					scanf("%s",_str);
-					// _str을 게시판에 추가 추가할때 넘버를 따로 줘야됨
+					insert_Notice(_str);
 				}
 				else if(i==2){
+					char num[10]="";
 					printf("삭제할 공지사항 번호 입력 : ");
-					scanf("%d",&i);
+					scanf("%s",num);
+					delete_Notice(num);
 					//번호에 해당하는 게시판 삭제
 				}
 				else if(i==3){

@@ -85,5 +85,26 @@ void insert_Id_Pw(char *Id, char *Pw)
 	strcat(sql, "','0');");
 	printf("%s\n", sql);
 
-	mysql_query(conn, sql);
+	mysql_query(conn, sql); // 회원가입 ID, PW를 DB에 Insert
+}
+
+void inesrt_Notice(char *str)
+{
+	char sql[100] = "inesrt into Notice(Text) values('";
+
+	strcat(sql, str);
+	strcat(sql, "');"
+	printf("%s\n", sql);
+
+	mysql_query(conn, sql); // 공지사항 추
+}
+
+void delete_Notice(char *num)
+{
+	char sql[100] = "delete from Notice where Num = ";
+
+	strcat(sql, num);
+	strcat(sql, ";");
+
+	mysql_query(conn, sql); // 공지사항 삭
 }

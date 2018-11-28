@@ -11,6 +11,9 @@ void disconnectDB();
 int login_check(char *, char *);
 int str_check(char *);
 void insert_Id_Pw(char *, char *);
+void insert_Notice(char *);
+void delete_Notice(char *);
+void modifiy_admin(char *);
 
 MYSQL *conn;
 

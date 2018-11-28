@@ -5,7 +5,7 @@ Account(
 );
 
 Notice(
-	Num int NOT NULL AUTO_INCREMENT,
+	Num int AUTO_INCREMENT,
 	Text varchar(100) NOT NULL,
 	PRIMARY_KEY(Num)
 );

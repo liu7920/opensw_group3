@@ -102,7 +102,7 @@ void game(){
 			scanf("%d",&_x);
 			printf("열 입력 : ");
 			scanf("%d",&_y);
-			if((x>=1&&x<=4)	&& (y>=1&&y<=4)){
+			if((_x>=1&&_x<=4)	&& (_y>=1&&_y<=4)){
 				if(str_temp[_x-1][_y-1]!=0){
 					printf("입력 된 공간\n");
 					printf("다시 입력\n");	

@@ -13,7 +13,7 @@ void member_menu(){
 		printf("***** 공지사항 ******\n");
 		//공지사항 db에서 있는 내용 출력하기
 
-		printf("1.게임 시작 2.랭크 보기 3.회원 정보 수정 4.로그아웃 \n");
+		printf("1.게임 시작 2.랭크 보기 3.회원 정보 수정 4.회원 탈퇴 5.로그아웃 \n");
 		printf("입력 : ");
 		scanf("%d",&i);
 		if(i==1){
@@ -57,6 +57,26 @@ void member_menu(){
 
 		}
 		else if(i==4){
+			printf(">>회원 탈퇴<<\n");
+			printf("회원 아이디 입력 : ");
+			scanf("%s",str);
+			if(/*str == id(db)*/){
+				printf("1.탈퇴 2.취소");
+				printf("입력 : ");
+				scanf("%d",&i)
+				if(i==1){
+					printf("탈퇴 성공\n");
+					//db에서 회원 삭제
+				}
+				else if(i==2){
+					printf("삭제 취소\n");
+				}
+				else{
+					printf("잘못된 입력\n");
+				}
+			}
+		}
+		else if(i==5){
 			printf(">>로그아웃<<\n");
 			break;
 		}

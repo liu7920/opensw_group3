@@ -3,3 +3,9 @@ Account(
 	Pw varchar(20) NOT NULL,
 	Cl_time varchar(20) NOT NULL
 );
+
+Notice(
+	Num int NOT NULL AUTO_INCREMENT,
+	Text varchar(100) NOT NULL,
+	PRIMARY_KEY(Num)
+);

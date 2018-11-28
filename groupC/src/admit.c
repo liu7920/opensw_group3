@@ -1,4 +1,5 @@
 #include "common.h"
+#include "dbconn.h"
 
 void admit_menu(){
 
@@ -11,19 +12,19 @@ void admit_menu(){
 		scanf("%d",&i);
 		if(i==1){
 			while(1){
-				printf(">>게시판 수정<<\n");
+				printf(">>공지사항 수정<<\n");
 				// 보여주기 예시
 				// 1 ~~~~~~~~~~~
 				// 2 ***********
 				printf("1.추가 2.삭제 3.취소\n");
 				scanf("%d",&i);
 				if(i==1){
-					printf("추가 게시판 내용 입력 : ");
+					printf("공지사항 추가 할 내용 입력 : ");
 					scanf("%s",_str);
 					// _str을 게시판에 추가 추가할때 넘버를 따로 줘야됨
 				}
 				else if(i==2){
-					printf("삭제할 게시판 번호 입력 : ");
+					printf("삭제할 공지사항 번호 입력 : ");
 					scanf("%d",&i);
 					//번호에 해당하는 게시판 삭제
 				}

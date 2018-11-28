@@ -13,6 +13,7 @@ void member_menu(){
 	char s1[20];
 
 	while(1){
+		system("clear");
 		printf("***** 공지사항 ******\n");
 		print_Notice();
 		printf("*********************\n");
@@ -30,8 +31,7 @@ void member_menu(){
 			sec=d->tm_sec;			
 			printf("시작 시간 : %d시 %d분 %d초\n",hour,min,sec);
 			
-			//game();
-			sleep(10);
+			game();
 			
         	now=time(NULL);
        	d=localtime(&now);
@@ -47,9 +47,11 @@ void member_menu(){
 
 		}
 		else if(i==2){
+			system("clear");
 			print_Rank();
 		}
 		else if(i==3){
+			system("clear");
 			printf(">>회원 정보 수정<<\n");
 			printf("비밀번호  입력  : ");
 			scanf("%s",str);
@@ -57,6 +59,7 @@ void member_menu(){
 
 		}
 		else if(i==4){
+			system("clear");
 			printf(">>회원 탈퇴<<\n");
 			printf("%s 회원님 비밀번호 입력 : ", login_id);
 			scanf("%s",str);
@@ -65,6 +68,8 @@ void member_menu(){
 		}
 		else if(i==5){
 			printf(">>로그아웃<<\n");
+			sleep(2);
+			system("clear");
 			break;
 		}
 

@@ -267,3 +267,57 @@ void user_ClTime_Insert(char *str)
 
 	mysql_query(conn, sql);
 }
+
+void print_Rank()
+{
+	char rank[10][100];
+	char _rank[10][50];
+	char _temp[50];
+	char _temp1[100];
+	int temp,cu=0, q, w;
+	char sql[100] = "select Id, Cl_time from Account;";
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
+
+	printf(">>랭크 보기<<\n");
+
+	if(mysql_query(conn, sql) != 0) return; // SQL Error
+
+	else{
+		res_set=mysql_store_result(conn);
+		for(q=0;q<10;q++){
+			row=mysql_fetch_row(res_set);
+			if(row == NULL){
+				break;
+			}
+			else if(strcmp(row[0], "admin") != 0){
+				char __temp[100] = "";
+				strcpy(__temp, row[0]);
+				strcat(__temp, " ");
+				strcat(__temp, row[1]);
+				strcpy(rank[q], __temp);
+				strcpy(_rank[q], row[1]); /* db의 시간만 넣기*/
+				cu++;
+			}
+		}
+
+		for(q=0;q<cu;q++){
+			for(w=1;w<cu;w++){
+				if(strcmp(_rank[q],_rank[w]) > 0 ){
+					//시간만 정렬
+					strcpy(_temp,_rank[q]);
+					strcpy(_rank[q],_rank[w]);
+					strcpy(_rank[w],_temp);
+					//아이디 + 시간 들어가있는것 정렬
+					strcpy(_temp1,rank[q]);
+					strcpy(rank[q],rank[w]);
+					strcpy(rank[w],_temp1);
+				}
+			}
+		}
+		printf("***** 랭킹 *****\n");
+		for(int i=0;i<cu;i++){
+			printf("%s\n",rank[i]);
+		}
+	}
+}

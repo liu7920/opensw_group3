@@ -28,6 +28,8 @@ void leave_user(char *);
 void user_ClTime_Insert(char *);
 void user_ClTime_clear(char *);
 
+void print_Rank();
+
 MYSQL *conn;
 
 

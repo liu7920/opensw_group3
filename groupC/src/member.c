@@ -8,14 +8,9 @@ void member_menu(){
 	int q,w;
 	time_t now;
 	struct tm *d;
-	int hour,min,sec,hour1,min1,sec1;
+	int hour,min,sec,hour1,min1,sec1,temp;
 	char str[20];
 	char s1[20];
-	char rank[10][100];
-	char _rank[10][50];
-	char _temp[50];
-	char _temp1[100];
-	int temp,cu=0;
 
 	while(1){
 		printf("***** 공지사항 ******\n");
@@ -52,37 +47,7 @@ void member_menu(){
 
 		}
 		else if(i==2){
-			cu=0;
-			printf(">>랭크 보기<<\n");
-			
-			for(q=0;q<10;q++){
-				if(/* db에서 불러올 데이터가 없을 경우 */){
-					break;	
-				}
-				rank[i] = /* db의 데이터 아이디 + 시간  */
-				_rank[i] /* db의 시간만 넣기*/
-				cu++;
-			}
-			
-			for(q=0;q<cu;q++){
-				for(w=1;w<cu;w++){
-					if(strcmp(_rank[i],_rank[o]) > 0 ){
-						//시간만 정렬
-						strcpy(_temp,_rank[i]);
-						strcpy(_rank[i],_rank[w]);
-						strcpy(_rank[w],_temp);
-						//아이디 + 시간 들어가있는것 정렬
-						strcpy(_temp1,rank[i]);
-						strcpy(rank[i],rank[w]);
-						strcpy(rank[w],_temp1);
-					}
-				}
-			}
-			printf("***** 랭킹 *****\n");
-			for(i=0;i<cu;i++){
-				printf("%s\n",rank[i]);
-			}
-			
+			print_Rank();
 		}
 		else if(i==3){
 			printf(">>회원 정보 수정<<\n");

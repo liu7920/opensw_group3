@@ -71,8 +71,8 @@ int str_check(char *str)
 	else{
 		res_set=mysql_store_result(conn);
 		row=mysql_fetch_row(res_set);
-		if(row == NULL) return 1;
-		else return 0; // 중복 없
+		if(row == NULL) return 1; // 중복없음
+		else return 0; // 중복
 	}
 }
 

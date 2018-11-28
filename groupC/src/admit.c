@@ -44,8 +44,11 @@ void admit_menu(){
 			strcpy(str," ");
 			scanf("%s",str);
 			
-			if(str_check(str)){
-
+			if(!str_check(str)){
+				user_ClTime_clear(str);
+			}
+			else{
+				printf("일치하는 ID가 없습니다.\n");
 			}
 			//if(/*str == id(db)*/){
 				//랭킹 초기화 

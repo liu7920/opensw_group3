@@ -132,6 +132,7 @@ void modifiy_admin(char *str)
 				strcat(sql2, "' where Id = 'admin';");
 
 				mysql_query(conn,sql);
+				printf("Account Sql %s\n", sql2);
 				printf("Admin 비밀번호 변경 완료\n");
 			}
 			else printf("기존 비밀번호 불일치\n");
@@ -165,9 +166,8 @@ void modifiy_user(char *str)
 				strcat(sql2, "' where Id = '");
 				strcat(sql2, login_id);
 				strcat(sql2, "';");
-
 				mysql_query(conn,sql);
-				printf("%s 회워님 비밀번호 변경 완료\n", login_id);
+				printf("%s 회원님 비밀번호 변경 완료\n", login_id);
 			}
 			else printf("기존 비밀번호 불일치\n");
 		}

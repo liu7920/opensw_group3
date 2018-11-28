@@ -10,6 +10,9 @@ void member_menu(){
 	char str[20];
 
 	while(1){
+		printf("***** 게시판 ******\n");
+		//공지사항 db에서 있는 내용 출력하기
+
 		printf("1.게임 시작 2.랭크 보기 3.회원 정보 수정 4.로그아웃 \n");
 		printf("입력 : ");
 		scanf("%d",&i);
@@ -43,7 +46,7 @@ void member_menu(){
 			printf("비밀번호  입력  : ");
 			scanf("%s",str);
 			if(/*비밀번호가 맞다면 */){
-				printf("비밀번호 입력 : ");
+				printf("새로운 비밀번호 입력 : ");
 				scanf("%s",str);
 				//str을 새로운 비밀번호로 db에 넣기
 				printf("비밀번호 변경 완료\n");

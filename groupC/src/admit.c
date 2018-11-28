@@ -7,7 +7,7 @@ void admit_menu(){
 	char str[20],_str[200];
 
 	while(1){
-		printf("1.게시판 수정 2.회원 데이터 초기화 3.회원 삭제 4.관리자 비밀번호 변경 5.로그아웃\n");
+		printf("1.공지사항 수정 2.회원 데이터 초기화 3.관리자 비밀번호 변경 4.로그아웃\n");
 		printf("입력 : ");
 		scanf("%d",&i);
 		if(i==1){
@@ -39,28 +39,9 @@ void admit_menu(){
 		}
 		else if(i==2){
 			printf(">>회원 데이터 초기화<<\n");
+			//랭킹 초기화
 		}
 		else if(i==3){
-			printf(">>회원 삭제<<\n");
-			printf("회원 아이디 입력 : ");
-			scanf("%s",str);
-			if(/*str == id(db)*/){
-				printf("1.삭제  2.취소");
-				printf("입력 : ");
-				scanf("%d",&i)
-				if(i==1){
-					printf("삭제 성공\n");
-					//db에서 회원 삭제
-				}
-				else if(i==2){
-					printf("삭제 취소\n");
-				}
-				else{
-					printf("잘못된 입력\n");
-				}
-			}
-		}
-		else if(i==4){
 			printf(">>관리자 비밀번호 변경<<\n");
 			printf("비밀번호 입력 : ");
 			scanf("%s",str);
@@ -74,7 +55,7 @@ void admit_menu(){
 				printf("입력 비밀번호가 틀립니다.\n");
 			}
 		}
-		else if(i==5){
+		else if(i==4){
 			printf(">>로그아웃<<\n");
 			break;
 		}

@@ -7,6 +7,8 @@ void admit_menu(){
 	char str[20],_str[200];
 
 	while(1){
+		sleep(2);
+		system("clear");
 		printf("1.공지사항 수정 2.회원 데이터 초기화 3.관리자 비밀번호 변경 4.로그아웃\n");
 		printf("입력 : ");
 		scanf("%d",&i);

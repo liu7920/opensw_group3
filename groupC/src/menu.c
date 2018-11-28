@@ -41,6 +41,7 @@ void menu(){
 			system("clear");
 			printf(">>회원가입<<\n");
 			join();
+			sleep(2);
 		}
 		else if(input==3){
 			system("clear");

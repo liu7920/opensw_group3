@@ -1,5 +1,6 @@
 #include "common.h"
 #include "menu.h"
+#include "dbconn.h"
 
 void member_menu(){
 
@@ -52,7 +53,7 @@ void member_menu(){
 			printf(">>회원 탈퇴<<\n");
 			printf("%s 회원님 비밀번호 입력 : ", login_id);
 			scanf("%s",str);
-			leave_uesr(str);
+			leave_user(str);
 		}
 		else if(i==5){
 			printf(">>로그아웃<<\n");

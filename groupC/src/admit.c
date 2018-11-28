@@ -46,12 +46,12 @@ void admit_menu(){
 			strcpy(str," ");
 			scanf("%s",str);
 			
-			if(/*str == id(db)*/){
+			//if(/*str == id(db)*/){
 				//랭킹 초기화 
-			}
-			else{
+			//}
+			/*else{
 				printf("아이디 입력 실패 \n");
-			}
+			}*/
 			//랭킹 초기화
 		}
 		else if(i==3){
@@ -59,7 +59,7 @@ void admit_menu(){
 			printf("비밀번호 입력 : ");
 			strcpy(str," ");
 			scanf("%s",str);
-			admin_modifiy(str);
+			modifiy_admin(str);
 		}
 		else if(i==4){
 			printf(">>로그아웃<<\n");

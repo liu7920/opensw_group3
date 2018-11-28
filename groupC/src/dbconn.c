@@ -88,12 +88,12 @@ void insert_Id_Pw(char *Id, char *Pw)
 	mysql_query(conn, sql); // 회원가입 ID, PW를 DB에 Insert
 }
 
-void inesrt_Notice(char *str)
+void insert_Notice(char *str)
 {
 	char sql[100] = "inesrt into Notice(Text) values('";
 
 	strcat(sql, str);
-	strcat(sql, "');"
+	strcat(sql, "');");
 	printf("%s\n", sql);
 
 	mysql_query(conn, sql); // 공지사항 추가
@@ -111,15 +111,15 @@ void delete_Notice(char *num)
 
 void modifiy_admin(char *str)
 {
-	char sql[100] = "select Pw from Account where Id = 'admin';"
+	char sql[100] = "select Pw from Account where Id = 'admin';";
 	MYSQL_ROW row;
 	MYSQL_RES *res_set;
 
-	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	if(mysql_query(conn, sql) != 0) return; // SQL Error
 	else{
 		res_set=mysql_store_result(conn);
 		row=mysql_fetch_row(res_set);
-		if(row == NULL) return 1;
+		if(row == NULL) return;
 		else{
 			if(strcmp(row[0], str) == 0){
 				char temp[100]="";
@@ -148,11 +148,11 @@ void modifiy_user(char *str)
 	strcat(sql, login_id);
 	strcat(sql, "';");
 
-	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	if(mysql_query(conn, sql) != 0) return; // SQL Error
 	else{
 		res_set=mysql_store_result(conn);
 		row=mysql_fetch_row(res_set);
-		if(row == NULL) return 1;
+		if(row == NULL) return;
 		else{
 			if(strcmp(row[0], str) == 0){
 				char temp[100]="";
@@ -184,21 +184,21 @@ void leave_user(char *str)
 	strcat(sql, login_id);
 	strcat(sql, "';");
 
-	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	if(mysql_query(conn, sql) != 0) return; // SQL Error
 	else{
 		res_set=mysql_store_result(conn);
 		row=mysql_fetch_row(res_set);
-		if(row == NULL) return 1;
+		if(row == NULL) return;
 		else if(strcmp(row[0], str) == 0){
 			printf("1.탈퇴 2.취소");
 			printf("입력 : ");
-			scanf("%d",&i)
+			scanf("%d",&i);
 			if(i==1){
 				printf("탈퇴 성공\n");
 				char sql2[100]="delete from Account where id = '";
 				strcat(sql2, login_id);
 				strcat(sql2, "';");
-				mysql_queyr(conn, sql);
+				mysql_query(conn, sql);
 			}
 			else if(i==2){
 				printf("삭제 취소\n");

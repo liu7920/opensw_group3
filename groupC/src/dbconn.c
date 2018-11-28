@@ -131,7 +131,7 @@ void modifiy_admin(char *str)
 				strcat(sql2, temp);
 				strcat(sql2, "' where Id = 'admin';");
 
-				mysql_query(conn,sql);
+				mysql_query(conn,sql2);
 				printf("Account Sql %s\n", sql2);
 				printf("Admin 비밀번호 변경 완료\n");
 			}
@@ -166,7 +166,7 @@ void modifiy_user(char *str)
 				strcat(sql2, "' where Id = '");
 				strcat(sql2, login_id);
 				strcat(sql2, "';");
-				mysql_query(conn,sql);
+				mysql_query(conn,sql2);
 				printf("%s 회원님 비밀번호 변경 완료\n", login_id);
 			}
 			else printf("기존 비밀번호 불일치\n");
@@ -198,7 +198,7 @@ void leave_user(char *str)
 				char sql2[100]="delete from Account where id = '";
 				strcat(sql2, login_id);
 				strcat(sql2, "';");
-				mysql_query(conn, sql);
+				mysql_query(conn, sql2);
 			}
 			else if(i==2){
 				printf("삭제 취소\n");

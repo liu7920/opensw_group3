@@ -54,6 +54,7 @@ void member_menu(){
 			printf("%s 회원님 비밀번호 입력 : ", login_id);
 			scanf("%s",str);
 			leave_user(str);
+			break;
 		}
 		else if(i==5){
 			printf(">>로그아웃<<\n");

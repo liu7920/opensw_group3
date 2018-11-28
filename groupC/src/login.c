@@ -28,7 +28,7 @@ void join()
 		printf("비밀번호 입력 : ");
 		scanf("%s", Pw);
 		insert_Id_Pw(Id, Pw);
-		printf("%s님 회원가입 완료", Id);
+		printf("%s님 회원가입 완료\n", Id);
 	}
 	else printf("ID가 중복입니다.\n");
 

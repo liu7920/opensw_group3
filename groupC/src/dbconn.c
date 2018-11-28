@@ -44,8 +44,6 @@ int login_check(char *id, char *pw)
 	strcat(sql, pw);
 	strcat(sql, "';");
 
-	printf("%s\n", sql);
-
 	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
 	else{
 		res_set = mysql_store_result(conn);
@@ -83,7 +81,6 @@ void insert_Id_Pw(char *Id, char *Pw)
 	strcat(sql, "','");
 	strcat(sql, Pw);
 	strcat(sql, "','0');");
-	printf("%s\n", sql);
 
 	mysql_query(conn, sql); // 회원가입 ID, PW를 DB에 Insert
 }
@@ -94,8 +91,6 @@ void insert_Notice(char *str)
 
 	strcat(sql, str);
 	strcat(sql, "');");
-	printf("%s\n", sql);
-	printf("Notice = %s\n", sql);
 
 	mysql_query(conn, sql); // 공지사항 추가
 }
@@ -133,7 +128,6 @@ void modifiy_admin(char *str)
 				strcat(sql2, "' where Id = 'admin';");
 
 				mysql_query(conn,sql2);
-				printf("Account Sql %s\n", sql2);
 				printf("Admin 비밀번호 변경 완료\n");
 			}
 			else printf("기존 비밀번호 불일치\n");
@@ -191,21 +185,21 @@ void leave_user(char *str)
 		row=mysql_fetch_row(res_set);
 		if(row == NULL) return;
 		else if(strcmp(row[0], str) == 0){
-			printf("1.탈퇴 2.취소");
+			printf("1.회원탈퇴 2.이전으로\n");
 			printf("입력 : ");
 			scanf("%d",&i);
 			if(i==1){
-				printf("탈퇴 성공\n");
+				printf("회원 탈퇴가 완료 되었습니다.\n");
 				char sql2[100]="delete from Account where id = '";
 				strcat(sql2, login_id);
 				strcat(sql2, "';");
 				mysql_query(conn, sql2);
 			}
 			else if(i==2){
-				printf("삭제 취소\n");
+				printf("회원 탈퇴가 취소 되었습니다.\n");
 			}
 			else{
-				printf("잘못된 입력\n");
+				printf("잘못된 입력입니다.\n");
 			}
 		}
 	}

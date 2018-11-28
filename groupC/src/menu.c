@@ -33,6 +33,7 @@ void menu(){
 			}
 			else{
 				printf(">>로그인 실패<<\n");
+				sleep(2);
 			}
 
 		}

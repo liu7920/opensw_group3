@@ -173,3 +173,39 @@ void modifiy_user(char *str)
 		}
 	}
 }
+
+void leave_user(char *str)
+{
+	int i;
+	char sql[100] = "select Pw from Account where Id = '";
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
+
+	strcat(sql, login_id);
+	strcat(sql, "';");
+
+	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	else{
+		res_set=mysql_store_result(conn);
+		row=mysql_fetch_row(res_set);
+		if(row == NULL) return 1;
+		else if(strcmp(row[0], str) == 0){
+			printf("1.탈퇴 2.취소");
+			printf("입력 : ");
+			scanf("%d",&i)
+			if(i==1){
+				printf("탈퇴 성공\n");
+				char sql2[100]="delete from Account where id = '";
+				strcat(sql2, login_id);
+				strcat(sql2, "';");
+				mysql_queyr(conn, sql);
+			}
+			else if(i==2){
+				printf("삭제 취소\n");
+			}
+			else{
+				printf("잘못된 입력\n");
+			}
+		}
+	}
+}

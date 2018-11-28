@@ -50,23 +50,9 @@ void member_menu(){
 		}
 		else if(i==4){
 			printf(">>회원 탈퇴<<\n");
-			printf("비밀번호 입력 : ");
+			printf("%s 회원님 비밀번호 입력 : ", login_id);
 			scanf("%s",str);
-			if(/*str == id(db)*/){
-				printf("1.탈퇴 2.취소");
-				printf("입력 : ");
-				scanf("%d",&i)
-				if(i==1){
-					printf("탈퇴 성공\n");
-					//db에서 회원 삭제
-				}
-				else if(i==2){
-					printf("삭제 취소\n");
-				}
-				else{
-					printf("잘못된 입력\n");
-				}
-			}
+			leave_uesr(str);
 		}
 		else if(i==5){
 			printf(">>로그아웃<<\n");
@@ -74,6 +60,5 @@ void member_menu(){
 		}
 
 	}
-
 	return ;
 }

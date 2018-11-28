@@ -12,6 +12,7 @@ void admit_menu(){
 		scanf("%d",&i);
 		if(i==1){
 			while(1){
+				system("clear");
 				printf(">>공지사항 수정<<\n");
 				print_Notice_admin();
 				printf("1.추가 2.삭제 3.취소\n");
@@ -39,6 +40,7 @@ void admit_menu(){
 			}
 		}
 		else if(i==2){
+			system("clear");
 			printf(">>회원 랭킹 데이터 초기화<<\n");
 			printf("랭킹 초기화 할 아이디 입력 : ");
 			strcpy(str," ");
@@ -59,6 +61,7 @@ void admit_menu(){
 			//랭킹 초기화
 		}
 		else if(i==3){
+			system("clear");
 			printf(">>관리자 비밀번호 변경<<\n");
 			printf("비밀번호 입력 : ");
 			strcpy(str," ");
@@ -67,6 +70,8 @@ void admit_menu(){
 		}
 		else if(i==4){
 			printf(">>로그아웃<<\n");
+			sleep(1);
+			system("clear");
 			break;
 		}
 	}

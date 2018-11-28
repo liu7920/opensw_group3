@@ -90,11 +90,12 @@ void insert_Id_Pw(char *Id, char *Pw)
 
 void insert_Notice(char *str)
 {
-	char sql[100] = "inesrt into Notice(Text) values('";
+	char sql[100] = "insert into Notice(Text) values('";
 
 	strcat(sql, str);
 	strcat(sql, "');");
 	printf("%s\n", sql);
+	printf("Notice = %s\n", sql);
 
 	mysql_query(conn, sql); // 공지사항 추가
 }

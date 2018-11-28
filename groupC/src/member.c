@@ -44,7 +44,7 @@ void member_menu(){
 			temp=((hour1*3600)+(min1*60)+sec1) - ((hour*3600)+(min*60)+sec);
 			sprintf(s1,"%d",temp); // int형에서 char문자열 변환
 			user_ClTime_Insert(s1);
-
+			sleep(2);
 		}
 		else if(i==2){
 			system("clear");
@@ -57,6 +57,7 @@ void member_menu(){
 			printf("비밀번호  입력  : ");
 			scanf("%s",str);
 			modifiy_user(str);
+			sleep(2);
 
 		}
 		else if(i==4){
@@ -65,6 +66,7 @@ void member_menu(){
 			printf("%s 회원님 비밀번호 입력 : ", login_id);
 			scanf("%s",str);
 			leave_user(str);
+			sleep(2);
 			break;
 		}
 		else if(i==5){

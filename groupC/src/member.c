@@ -13,6 +13,7 @@ void member_menu(){
 	char s1[20];
 
 	while(1){
+		sleep(2);
 		system("clear");
 		printf("***** 공지사항 ******\n");
 		print_Notice();

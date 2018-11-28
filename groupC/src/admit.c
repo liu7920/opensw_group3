@@ -47,15 +47,7 @@ void admit_menu(){
 			printf(">>관리자 비밀번호 변경<<\n");
 			printf("비밀번호 입력 : ");
 			scanf("%s",str);
-			if(/*str == pw(db)*/){
-				printf("새로운 비밀번호 입력 : ");
-				scanf("%s",str);
-				//str을 새로운 비밀번호로 db에 넣기
-				printf("비밀번호 변경 완료\n");
-			}
-			else{ //틀리다면
-				printf("입력 비밀번호가 틀립니다.\n");
-			}
+			admin_modifiy(str);
 		}
 		else if(i==4){
 			printf(">>로그아웃<<\n");

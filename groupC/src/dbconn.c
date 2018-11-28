@@ -96,7 +96,7 @@ void inesrt_Notice(char *str)
 	strcat(sql, "');"
 	printf("%s\n", sql);
 
-	mysql_query(conn, sql); // 공지사항 추
+	mysql_query(conn, sql); // 공지사항 추가
 }
 
 void delete_Notice(char *num)
@@ -106,5 +106,38 @@ void delete_Notice(char *num)
 	strcat(sql, num);
 	strcat(sql, ";");
 
-	mysql_query(conn, sql); // 공지사항 삭
+	mysql_query(conn, sql); // 공지사항 삭제
+}
+
+void modifiy_admin(char *str)
+{
+	char sql[100] = "select Pw from Account where Id = 'admin';"
+	MYSQL_ROW row;
+	MYSQL_RES *res_set;
+
+	if(mysql_query(conn, sql) != 0) return -1; // SQL Error
+	else{
+		res_set=mysql_store_result(conn);
+		row=mysql_fetch_row(res_set);
+		if(row == NULL) return 1;
+		else{
+			if(strcmp(row[0], str) == 0){
+				char temp[100]="";
+				char sql2[100] = "update Account set Pw = '";
+
+				printf("새로운 비밀번호 입력 : ");
+				scanf("%s", temp);
+
+				strcat(sql2, temp);
+				strcat(sql2, "' where Pw = '");
+				strcat(sql2, str);
+				strcat(sql2, "';");
+
+				mysql_query(conn,sql);
+				printf("Admin 비밀번호 변경 완료\n");
+			}
+			else printf("기존 비밀번호 불일치\n");
+		}
+	}
+
 }

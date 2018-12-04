@@ -1,13 +1,12 @@
 # opensw_groupC
-
-#groupC
+# groupC
   program source code
   
-#PPT
+# PPT
   Presentation PowerPoinT
  
 
-#Wiki
+# Wiki
   program description
  
  

@@ -1,14 +1,15 @@
 # opensw_groupC
 # groupC
-  program source code
+  Program source code Folder
   
 # PPT
   Presentation PowerPoinT
  
+# PDF
+  powerpoint (PDFver)
+
+# DBTABLE
+  DataBase Table structure
 
 # Wiki
   program description
-
-# PDF
-  powerpoint (PDFver)
- 
